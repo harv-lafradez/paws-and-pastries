@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a212414f6cdf5ea4ea65b905921667d4
+guid: b597a03da649469448a0146bc72bb9f6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,31 +110,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CharacterIdle_3
+      name: CharacterFall_0
       rect:
         serializedVersion: 2
         x: 7
-        y: 8
-        width: 10
-        height: 10
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81f3ff7e6d73b6347acb120852d1ea6f
-      internalID: 1149077336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CharacterIdle_6
-      rect:
-        serializedVersion: 2
-        x: 31
         y: 8
         width: 10
         height: 11
@@ -145,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 371165719a5e8c843941767a72165438
-      internalID: 2076100950
+      spriteID: f0e4a7d18fcab3940a682664c073a456
+      internalID: -1439560609
       vertices: []
       indices: 
       edges: []
@@ -162,14 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CharacterIdle_0: 448226518
-      CharacterIdle_1: 979123017
-      CharacterIdle_2: -52771512
-      CharacterIdle_3: 1149077336
-      CharacterIdle_4: -1732537080
-      CharacterIdle_5: -1039711644
-      CharacterIdle_6: 2076100950
-      CharacterIdle_7: 977869352
+      CharacterFall_0: -1439560609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

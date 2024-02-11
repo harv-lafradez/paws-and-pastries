@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a212414f6cdf5ea4ea65b905921667d4
+guid: 3f63c0f5fe4130e4d91f7b945503fca2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 8
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 7, y: 8, z: 7, w: 6}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CharacterIdle_3
+      name: CharacterJump_2
       rect:
         serializedVersion: 2
         x: 7
@@ -124,29 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81f3ff7e6d73b6347acb120852d1ea6f
-      internalID: 1149077336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CharacterIdle_6
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 8
-        width: 10
-        height: 11
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 371165719a5e8c843941767a72165438
-      internalID: 2076100950
+      spriteID: 4f30da6c8caaed347ad414d4ce1e5555
+      internalID: -455629
       vertices: []
       indices: 
       edges: []
@@ -155,21 +134,17 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CharacterIdle_0: 448226518
-      CharacterIdle_1: 979123017
-      CharacterIdle_2: -52771512
-      CharacterIdle_3: 1149077336
-      CharacterIdle_4: -1732537080
-      CharacterIdle_5: -1039711644
-      CharacterIdle_6: 2076100950
-      CharacterIdle_7: 977869352
+      CharacterJump_0: -1038324468
+      CharacterJump_1: -1296854946
+      CharacterJump_2: -455629
+      CharacterJump_3: -1661047194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
