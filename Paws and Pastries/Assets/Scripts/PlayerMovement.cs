@@ -15,7 +15,10 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMovement;
 
     [Header("Jumping")]
-    public float jumpPower = 6f; 
+    public float jumpPower = 6f;
+    private bool canDoubleJump = false;
+    private int extraJumpsRemaining;
+    public int extraJumps = 1;
 
     [Header("GroundCheck")]
     public Transform groundCheckPos;
@@ -25,12 +28,22 @@ public class PlayerMovement : MonoBehaviour
     [Header("Gravity")]
     public float baseGravity = 2;
     public float maxFallSpeed = 18f;
-    public float fallSpeedMultiplier =2f;
-     
+    public float fallSpeedMultiplier = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
+        // Subscribe to the OnCroissantCollected event
+        Croissant.OnCroissantCollected += EnableDoubleJump;
+        // Initialize extraJumpsRemaining to the extra jumps
+        extraJumpsRemaining = extraJumps;
+    }
 
+    private void EnableDoubleJump(bool enable)
+    {
+        // Enable or disable double jump based on the value passed from the event
+        canDoubleJump = enable;
+        // Debug.Log("Double jump enabled: " + canDoubleJump);
     }
 
     // Update is called once per frame
@@ -59,15 +72,29 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (IsGrounded())
+        // Debug.Log("Jumps remaining: " + extraJumpsRemaining);
+        if (IsGrounded() || (canDoubleJump && extraJumpsRemaining > 0))
         {
             if (context.performed)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
                 animator.SetTrigger("jump");
+                if (!IsGrounded() && canDoubleJump)
+                {
+                    extraJumpsRemaining--;
+                }
             }
         }
+    }
 
+    private bool IsGrounded()
+    {
+        if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
+        {
+            extraJumpsRemaining = extraJumps;
+            return true;
+        }
+        return false;
     }
 
     private void Gravity()
@@ -83,15 +110,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
-    {
-        if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
-        {
-            return true;
-        }
-        return false;
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.white;
@@ -100,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        if (isFacingRight && horizontalMovement < 0 || !isFacingRight && horizontalMovement >0)
+        if (isFacingRight && horizontalMovement < 0 || !isFacingRight && horizontalMovement > 0)
         {
             isFacingRight = !isFacingRight;
             Vector3 ls = transform.localScale;

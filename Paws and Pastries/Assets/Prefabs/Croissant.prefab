@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7953712480719749717
+--- !u!1 &7455174039411470262
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5719883217864930911}
-  - component: {fileID: 6454055263423397532}
-  - component: {fileID: 7992202714163346890}
-  - component: {fileID: 8400693150638940793}
-  - component: {fileID: -90210933017945007}
+  - component: {fileID: 7610714585318085975}
+  - component: {fileID: 5165402603098443024}
+  - component: {fileID: 6019490254381227829}
+  - component: {fileID: 6580599640415411702}
+  - component: {fileID: 8584930708649303320}
   m_Layer: 0
-  m_Name: Bread
+  m_Name: Croissant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5719883217864930911
+--- !u!4 &7610714585318085975
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7953712480719749717}
+  m_GameObject: {fileID: 7455174039411470262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.18373, y: 1.5935506, z: 0}
+  m_LocalPosition: {x: 3.28, y: -0.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6454055263423397532
+--- !u!212 &5165402603098443024
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7953712480719749717}
+  m_GameObject: {fileID: 7455174039411470262}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,37 +76,24 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1930197770, guid: c56796ce35fd9c544bf4465abad90592, type: 3}
+  m_Sprite: {fileID: -1648858714, guid: c56796ce35fd9c544bf4465abad90592, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7992202714163346890
-MonoBehaviour:
+--- !u!61 &6019490254381227829
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7953712480719749717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bdd82814c39a274a942e55b1840b997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  worth: 20
---- !u!58 &8400693150638940793
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7953712480719749717}
+  m_GameObject: {fileID: 7455174039411470262}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -133,19 +120,41 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &-90210933017945007
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &6580599640415411702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7953712480719749717}
+  m_GameObject: {fileID: 7455174039411470262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777391462f170e2489f9a3e0cef6b154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8584930708649303320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455174039411470262}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4747e2f5432db549adf8add8287f25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   floatSpeed: 1
-  floatHeight: 0.2
+  floatHeight: 0.5
