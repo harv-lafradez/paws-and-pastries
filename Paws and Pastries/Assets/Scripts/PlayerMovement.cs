@@ -16,9 +16,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jumping")]
     public float jumpPower = 6f;
+    /**
     private bool canDoubleJump = false;
     private int extraJumpsRemaining;
     public int extraJumps = 1;
+    */
 
     [Header("GroundCheck")]
     public Transform groundCheckPos;
@@ -34,17 +36,18 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         // Subscribe to the OnCroissantCollected event
-        Croissant.OnCroissantCollected += EnableDoubleJump;
+        // Croissant.OnCroissantCollected += EnableDoubleJump;
         // Initialize extraJumpsRemaining to the extra jumps
-        extraJumpsRemaining = extraJumps;
+        // extraJumpsRemaining = extraJumps;
     }
-
+    /**
     private void EnableDoubleJump(bool enable)
     {
         // Enable or disable double jump based on the value passed from the event
         canDoubleJump = enable;
         // Debug.Log("Double jump enabled: " + canDoubleJump);
     }
+    */
 
     // Update is called once per frame
     void Update()
@@ -73,16 +76,18 @@ public class PlayerMovement : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
         // Debug.Log("Jumps remaining: " + extraJumpsRemaining);
-        if (IsGrounded() || (canDoubleJump && extraJumpsRemaining > 0))
+        if (IsGrounded()) //|| (canDoubleJump && extraJumpsRemaining > 0))
         {
             if (context.performed)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
                 animator.SetTrigger("jump");
+                /**
                 if (!IsGrounded() && canDoubleJump)
                 {
                     extraJumpsRemaining--;
                 }
+                */
             }
         }
     }
@@ -91,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
         {
-            extraJumpsRemaining = extraJumps;
+            // extraJumpsRemaining = extraJumps;
             return true;
         }
         return false;

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bread : MonoBehaviour, IITem
 {
     public static event Action<int> OnBreadCollect;
-    public int worth = 20;
+    public int worth = 10;
 
     public void Collect()
     {
