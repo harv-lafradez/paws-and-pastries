@@ -31,6 +31,10 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(enemy.damage);
         }
+        else if (collision.CompareTag("Void"))
+        {
+            OnPlayerDied.Invoke();
+        }
     }
 
     void ResetHealth()

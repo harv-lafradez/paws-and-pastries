@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
 
     public static event Action OnReset;
 
+    public AudioSource collectionSoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +63,8 @@ public class GameController : MonoBehaviour
         progressAmount += amount;
         // Debug.Log("Progress amount:" + progressAmount);
         progressSlider.value = progressAmount;
+
+        collectionSoundEffect.Play();
 
         if (progressAmount >= 100)
         {

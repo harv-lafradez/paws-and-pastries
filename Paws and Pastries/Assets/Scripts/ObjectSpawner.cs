@@ -168,6 +168,10 @@ public class ObjectSpawner : MonoBehaviour
         TileBase[] allTiles = tilemap.GetTilesBlock(boundsInt);
         Vector3 start = tilemap.CellToWorld(new Vector3Int(boundsInt.xMin, boundsInt.yMin, 0));
 
+        // Define minimum and maximum spawn heights relative to the ground
+        float minHeight = 1f; // Minimum height above the ground
+        float maxHeight = 3f; // Maximum height above the ground
+
         for (int x = 0; x < boundsInt.size.x; x++)
         {
             for (int y = 0; y < boundsInt.size.y; y++)
@@ -175,8 +179,27 @@ public class ObjectSpawner : MonoBehaviour
                 TileBase tile = allTiles[x + y * boundsInt.size.x];
                 if (tile != null)
                 {
-                    Vector3 place = start + new Vector3(x + 0.5f, y + 2f, 0);
-                    validSpawnPositions.Add(place);
+                    // Calculate spawn position based on tile position and ground level
+                    Vector3 spawnPosition = start + new Vector3(x + 0.5f, y + minHeight + Random.value * (maxHeight - minHeight), 0);
+
+                    // Check for collisions at the spawn position
+                    Collider2D[] colliders = Physics2D.OverlapCircleAll(spawnPosition, 0.1f); // Adjust radius as needed
+                    bool clearSpawnPosition = true;
+                    foreach (Collider2D collider in colliders)
+                    {
+                        // If there's any collision, mark the spawn position as not clear
+                        if (collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                        {
+                            clearSpawnPosition = false;
+                            break;
+                        }
+                    }
+
+                    // If the spawn position is clear, add it to the list of valid spawn positions
+                    if (clearSpawnPosition)
+                    {
+                        validSpawnPositions.Add(spawnPosition);
+                    }
                 }
             }
         }
